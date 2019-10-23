@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+<body>
+<h3>Hello</h3>
+<h:outputLabel value="Welcome to JSF world............."></h:outputLabel><br/>
+<h:form>
+<h:panelGrid border="2">
+<h:panelGroup>
+<h:outputLabel value="UserName: "></h:outputLabel>
+<h:inputText id="un" value="#{UserBean.un}" required="true" autocomplete="Hello"></h:inputText><br/>
+<h:outputLabel value="Password: "></h:outputLabel>
+<h:inputSecret id="ps"></h:inputSecret><br/>
+<h:commandButton action="Success.xhtml" value="Login"></h:commandButton>
+</h:panelGroup>
+<h:outputLink  value="http://www.google.com">G</h:outputLink>
+</h:panelGrid>
+</h:form>
+<h:outputLink  value="Register.xhtml">Register</h:outputLink>
+</body>
+</html>

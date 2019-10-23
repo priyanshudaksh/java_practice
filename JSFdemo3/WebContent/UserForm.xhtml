@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+</h:head>
+<h:body>
+
+	<h:form>
+	<p:panel id = "pid" header = "User Form">
+		<p:messages id="msgs" /> 
+	<h:panelGrid >
+		<p:outputLabel for = "fName" value="Enter First Name: "></p:outputLabel>
+		<p:inputText id= "fName" value = "#{uf.firstname}" required="true" label = "FirstName">
+		<f:validateLength minimum="3"></f:validateLength>
+		</p:inputText>
+		<p:message for = "fName" display = "icon"></p:message>
+		<br></br>
+	
+		<p:outputLabel value="Country"></p:outputLabel>
+		<p:autoComplete value="#{uf.countryName}" completeMethod="#{uf.countryList()}"></p:autoComplete>
+		Calender:<p:calendar></p:calendar>
+		<p:tabView>
+		<p:tab title = "JSF">
+		<p:outputLabel value="JSF for view"></p:outputLabel>
+		</p:tab>
+		<p:tab title = "Spring">
+		<p:outputLabel value="Spring for Business"></p:outputLabel>
+		</p:tab>
+		<p:tab title = "Hib">
+		<p:outputLabel value="Hib for DB"></p:outputLabel>
+		</p:tab>
+		</p:tabView>
+		<p:outputLabel for = "lName" value="Enter Last Name: "></p:outputLabel>
+		<p:inputText id= "lName" value = "#{uf.lastname}" required="true" label = "LastName">
+		<f:validateLength minimum="3"></f:validateLength>
+		<p:ajax update="msgLastname" event="keyup" />
+		</p:inputText>
+		<p:message for = "lName"></p:message>
+		<br></br>
+		
+
+		<p:commandButton value = "Submit" update="pid" actionListener="#{uf.save}" icon="ui-icon-check" ></p:commandButton>
+		<p:message for="lname" id="msgLastname" display="icon" />
+		</h:panelGrid>
+</p:panel>
+
+	</h:form>
+	
+</h:body>
+</html>

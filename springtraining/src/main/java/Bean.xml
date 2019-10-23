@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd" 
+ xmlns:context="http://www.springframework.org/schema/context" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xmlns="http://www.springframework.org/schema/beans"> 
+ <bean id = "ven1" class = "com.hexa.spring.springtraining.Venue">
+ <constructor-arg value = "5"></constructor-arg>
+ <constructor-arg value = "MUMBAI"></constructor-arg>
+ </bean>
+ <bean id = "ven2" class = "com.hexa.spring.springtraining.Venue">
+ <constructor-arg value = "6"></constructor-arg>
+ <constructor-arg value = "CHM"></constructor-arg>
+ </bean>
+ 
+ <bean id = "java" class = "com.hexa.spring.springtraining.javaTraining">
+ <constructor-arg value="66"></constructor-arg>
+ <constructor-arg value="CHN"></constructor-arg>
+ <constructor-arg value="60000"></constructor-arg>
+ 
+ <constructor-arg>
+ <list>
+ <value>OOps</value>
+ <value>EJB</value>
+ <value>Hibernate</value>
+ </list>
+ </constructor-arg>
+ <constructor-arg>
+ <list>
+ <ref bean = "ven1"/>
+ <ref bean = "ven2"/>
+ </list>
+ </constructor-arg>
+ 
+ </bean>
+ 
+ </beans>
